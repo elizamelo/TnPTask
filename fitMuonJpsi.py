@@ -15,7 +15,7 @@ def FillNumDen(num, den):
     #Define the mass distribution
     process.TnP_MuonID.Variables.mass = cms.vstring("Tag-muon Mass",  "2.9", "3.3", "GeV/c^{2}")
   #NUMS (new selectors)    
-    if num == "looseid":
+      if num == "looseid":
         process.TnP_MuonID.Categories.CutBasedIdLoose  = cms.vstring("PassLooseid", "dummy[pass=1,fail=0]")
         process.TnP_MuonID.Expressions.CutBasedIdLooseVar = cms.vstring("CutBasedIdLooseVar", "CutBasedIdLoose==1", "CutBasedIdLoose")
         process.TnP_MuonID.Cuts.LooseCutid  = cms.vstring("LooseCutid", "CutBasedIdLooseVar", "0.5")
@@ -23,89 +23,18 @@ def FillNumDen(num, den):
         process.TnP_MuonID.Categories.CutBasedIdMedium  = cms.vstring("PassMediumid", "dummy[pass=1,fail=0]")
         process.TnP_MuonID.Expressions.CutBasedIdMediumVar = cms.vstring("CutBasedIdMediumVar", "CutBasedIdMedium==1", "CutBasedIdMedium")
         process.TnP_MuonID.Cuts.MediumCutid  = cms.vstring("MediumCutid", "CutBasedIdMediumVar", "0.5")
-    #elif num == "mediumidprompt":
-       # process.TnP_MuonID.Categories.CutBasedIdMediumPrompt  = cms.vstring("PassMediumidprompt", "dummy[pass=1,fail=0]")
-        #process.TnP_MuonID.Expressions.CutBasedIdMediumPromptVar = cms.vstring("CutBasedIdMediumPromptVar", "CutBasedIdMediumPrompt==1", "CutBasedIdMediumPrompt")
-        #process.TnP_MuonID.Cuts.MediumCutidPrompt  = cms.vstring("MediumCutidPrompt", "CutBasedIdMediumPromptVar", "0.5")
+    elif num == "mediumidprompt":
+        process.TnP_MuonID.Categories.CutBasedIdMediumPrompt  = cms.vstring("PassMediumidprompt", "dummy[pass=1,fail=0]")
+        process.TnP_MuonID.Expressions.CutBasedIdMediumPromptVar = cms.vstring("CutBasedIdMediumPromptVar", "CutBasedIdMediumPrompt==1", "CutBasedIdMediumPrompt")
+        process.TnP_MuonID.Cuts.MediumCutidPrompt  = cms.vstring("MediumCutidPrompt", "CutBasedIdMediumPromptVar", "0.5")
     elif num == "tightid":
         process.TnP_MuonID.Categories.CutBasedIdTight  = cms.vstring("PassTightid", "dummy[pass=1,fail=0]")
         process.TnP_MuonID.Expressions.CutBasedIdTightVar = cms.vstring("CutBasedIdTightVar", "CutBasedIdTight==1", "CutBasedIdTight")
         process.TnP_MuonID.Cuts.TightCutid  = cms.vstring("TightCutid", "CutBasedIdTightVar", "0.5")
-        #process.TnP_MuonID.Variables.dzPV  = cms.vstring("dzPV", "-1000", "1000", "")
-        #process.TnP_MuonID.Categories.Tight2012 = cms.vstring("Tight Id. Muon", "dummy[pass=1,fail=0]")
-        #process.TnP_MuonID.Expressions.Tight2012_zIPCutVar = cms.vstring("Tight2012_zIPCut", "Tight2012 == 1 && abs(dzPV) < 0.5", "Tight2012", "dzPV")
-        #process.TnP_MuonID.Cuts.Tight2012_zIPCut = cms.vstring("Tight2012_zIPCut", "Tight2012_zIPCutVar", "0.5")
-    elif num == "tightidhww":
-        process.TnP_MuonID.Variables.dzPV  = cms.vstring("dzPV", "-1000", "1000", "")
-        process.TnP_MuonID.Variables.dB  = cms.vstring("dB", "-1000", "1000", "")
-        process.TnP_MuonID.Categories.Tight2012 = cms.vstring("Tight Id. HWW Muon", "dummy[pass=1,fail=0]")
-        process.TnP_MuonID.Expressions.Tight2012_zIPdBCutVar = cms.vstring("Tight2012_zIPdBCut", "Tight2012 == 1 && abs(dzPV) < 0.1 && abs(dB) < 0.02", "Tight2012", "dzPV", "dB")
-        process.TnP_MuonID.Cuts.Tight2012_zIPdBCut = cms.vstring("Tight2012_zIPdBCut", "Tight2012_zIPdBCutVar", "0.5")
-    elif num == "puppiIso":
-        process.TnP_MuonID.Variables.pt = cms.vstring("pt", "0.0", "999", "")
-        process.TnP_MuonID.Variables.muPFIsoValueCHR04PUPPI = cms.vstring("muPFIsoValueCHR04PUPPI", "-1.0", "99999999","")
-        process.TnP_MuonID.Variables.muPFIsoValueNHR04PUPPI = cms.vstring("muPFIsoValueNHR04PUPPI","-1.0",  "99999999", "")
-        process.TnP_MuonID.Variables.muPFIsoValuePhR04PUPPI = cms.vstring("muPFIsoValuePhR04PUPPI", "-1.0", "99999999", "")
-        process.TnP_MuonID.Expressions.puppiIsoVar = cms.vstring("puppiIsoVar", "(muPFIsoValueCHR04PUPPI+muPFIsoValueNHR04PUPPI+muPFIsoValuePhR04PUPPI)/pt", "muPFIsoValueCHR04PUPPI", "muPFIsoValueNHR04PUPPI","muPFIsoValuePhR04PUPPI","pt")
-        process.TnP_MuonID.Cuts.puppiIsoCut =  cms.vstring("puppiIsoCut", "puppiIsoVar", "0.201")
-    elif num == "puppiIsoNoLep":
-        process.TnP_MuonID.Variables.pt = cms.vstring("pt", "0.0", "999", "")
-        process.TnP_MuonID.Variables.muPFIsoValueCHR04PUPPINoLep = cms.vstring("muPFIsoValueCHR04PUPPINoLep", "-1.0", "99999999","")
-        process.TnP_MuonID.Variables.muPFIsoValueNHR04PUPPINoLep = cms.vstring("muPFIsoValueNHR04PUPPINoLep","-1.0",  "99999999", "")
-        process.TnP_MuonID.Variables.muPFIsoValuePhR04PUPPINoLep = cms.vstring("muPFIsoValuePhR04PUPPINoLep", "-1.0", "99999999", "")
-        process.TnP_MuonID.Expressions.puppiIsoNoLepVar = cms.vstring("puppiIsoNoLepVar", "(muPFIsoValueCHR04PUPPINoLep+muPFIsoValueNHR04PUPPINoLep+muPFIsoValuePhR04PUPPINoLep)/pt", "muPFIsoValueCHR04PUPPINoLep", "muPFIsoValueNHR04PUPPINoLep","muPFIsoValuePhR04PUPPINoLep","pt")
-        process.TnP_MuonID.Cuts.puppiIsoNoLepCut =  cms.vstring("puppiIsoNoLepCut", "puppiIsoNoLepVar", "0.123")
-    elif num == "combpuppiIso":
-        process.TnP_MuonID.Variables.pt = cms.vstring("pt", "0.0", "999", "")
-        process.TnP_MuonID.Variables.muPFIsoValueCHR04PUPPI = cms.vstring("muPFIsoValueCHR04PUPPI", "-1.0", "99999999","")
-        process.TnP_MuonID.Variables.muPFIsoValueNHR04PUPPI = cms.vstring("muPFIsoValueNHR04PUPPI","-1.0",  "99999999", "")
-        process.TnP_MuonID.Variables.muPFIsoValuePhR04PUPPI = cms.vstring("muPFIsoValuePhR04PUPPI", "-1.0", "99999999", "")
-        process.TnP_MuonID.Variables.muPFIsoValueCHR04PUPPINoLep = cms.vstring("muPFIsoValueCHR04PUPPINoLep", "-1.0", "99999999","")
-        process.TnP_MuonID.Variables.muPFIsoValueNHR04PUPPINoLep = cms.vstring("muPFIsoValueNHR04PUPPINoLep","-1.0",  "99999999", "")
-        process.TnP_MuonID.Variables.muPFIsoValuePhR04PUPPINoLep = cms.vstring("muPFIsoValuePhR04PUPPINoLep", "-1.0", "99999999", "")
-        process.TnP_MuonID.Expressions.combpuppiIsoVar = cms.vstring("combpuppiIsoVar", "(muPFIsoValueCHR04PUPPINoLep+muPFIsoValueNHR04PUPPINoLep+muPFIsoValuePhR04PUPPINoLep+muPFIsoValueCHR04PUPPI+muPFIsoValueNHR04PUPPI+muPFIsoValuePhR04PUPPI)/(2*pt)", "muPFIsoValueCHR04PUPPINoLep", "muPFIsoValueNHR04PUPPINoLep","muPFIsoValuePhR04PUPPINoLep", "muPFIsoValueCHR04PUPPI", "muPFIsoValueNHR04PUPPI","muPFIsoValuePhR04PUPPI","pt")
-        process.TnP_MuonID.Cuts.combpuppiIsoCut =  cms.vstring("combpuppiIsoCut", "combpuppiIsoVar", "0.15")
-    elif num == "muCleanerIII":
-        process.TnP_MuonID.Variables.numberOfMatchedStations  = cms.vstring("numberOfMatchedStations", "-0.5", "7.5", "")
-        process.TnP_MuonID.Categories.TM = cms.vstring("TM", "dummy[pass=1,fail=0]")
-        process.TnP_MuonID.Expressions.TM_cleanMuonIIIVar = cms.vstring("TM_cleanMuonIIIVar", "TM == 1 && numberOfMatchedStations > 0", "TM", "numberOfMatchedStations")
-        process.TnP_MuonID.Cuts.TM_cleanMuonIIICut = cms.vstring("TM_cleanMuonIIICut", "TM_cleanMuonIIIVar", "0.5")    
-    elif num == "muCleanerIV":
-        process.TnP_MuonID.Variables.numberOfMatchedStations  = cms.vstring("numberOfMatchedStations", "-0.5", "7.5", "")
-        process.TnP_MuonID.Variables.tkValidHits  = cms.vstring("tkValidHits", "-0.5", "1000", "") 
-        process.TnP_MuonID.Variables.tkExpHitIn = cms.vstring("tkExpHitIn", "-0.5", "1000", "") 
-        process.TnP_MuonID.Variables.tkHitFract  = cms.vstring("tkHitFract", "-0.5", "1000", "") 
-        process.TnP_MuonID.Categories.TM = cms.vstring("Tracker Muon", "dummy[pass=1,fail=0]")
-        process.TnP_MuonID.Expressions.TM_cleanMuonIVVar = cms.vstring("TM_cleanMuonIVVar", "TM == 1 && numberOfMatchedStations > 0 && (tkValidHits >= 10 || (tkValidHits >= 7 && tkHitFract==1))", "TM", "numberOfMatchedStations", "tkValidHits", "tkHitFract")
-        process.TnP_MuonID.Cuts.TM_cleanMuonIVCut = cms.vstring("TM_cleanMuonIVCut", "TM_cleanMuonIVVar", "0.5")  
     elif num == "highptid":
-        process.TnP_MuonID.Variables.dzPV  = cms.vstring("dzPV", "-1000", "1000", "")
-        process.TnP_MuonID.Categories.HighPt = cms.vstring("High-pT Id. Muon", "dummy[pass=1,fail=0]")
-        process.TnP_MuonID.Expressions.HighPt_zIPCutVar = cms.vstring("HighPt_zIPCut", "HighPt == 1 && abs(dzPV) < 0.5", "HighPt", "dzPV")
-        process.TnP_MuonID.Cuts.HighPt_zIPCut = cms.vstring("HighPt_zIPCut", "HighPt_zIPCutVar", "0.5")
-    elif num == "looseiso":
-        process.TnP_MuonID.Variables.combRelIsoPF04dBeta = cms.vstring("dBeta rel iso dR 0.4", "-2", "9999999", "")
-        process.TnP_MuonID.Cuts.LooseIso4 = cms.vstring("LooseIso4" ,"combRelIsoPF04dBeta", "0.25")
-    elif num == "tightiso":
-        process.TnP_MuonID.Variables.combRelIsoPF04dBeta = cms.vstring("dBeta rel iso dR 0.4", "-2", "9999999", "")
-        process.TnP_MuonID.Cuts.TightIso4 = cms.vstring("TightIso4" ,"combRelIsoPF04dBeta", "0.15")
-    elif num == "tklooseiso":
-        process.TnP_MuonID.Variables.relTkIso = cms.vstring("trk rel iso dR 0.3", "-2", "9999999", "")
-        process.TnP_MuonID.Cuts.LooseTkIso3 = cms.vstring("LooseTkIso3" ,"relTkIso", "0.10")
-    #DEN
-    if den == "looseid":
-        process.TnP_MuonID.Categories.PF  = cms.vstring("PF Muon", "dummy[pass=1,fail=0]")
-    elif den == "mediumid":
-        process.TnP_MuonID.Categories.Medium = cms.vstring("Medium Id.", "dummy[pass=1,fail=0]")
-    elif den == "tightid":
-        process.TnP_MuonID.Variables.dzPV  = cms.vstring("dzPV", "-1000", "1000", "")
-        process.TnP_MuonID.Categories.Tight2012 = cms.vstring("Tight Id. Muon", "dummy[pass=1,fail=0]")
-    elif den == "tightidhww":
-        process.TnP_MuonID.Variables.dzPV  = cms.vstring("dzPV", "-1000", "1000", "")
-        process.TnP_MuonID.Variables.dB  = cms.vstring("dB", "-1000", "1000", "")
-        process.TnP_MuonID.Categories.Tight2012 = cms.vstring("Tight Id. HWW Muon", "dummy[pass=1,fail=0]")
-        process.TnP_MuonID.Expressions.Tight2012_zIPdBCutVar = cms.vstring("Tight2012_zIPdBCut", "Tight2012 == 1 && abs(dzPV) < 0.1 && abs(dB) < 0.02", "Tight2012", "dzPV", "dB")
-        process.TnP_MuonID.Cuts.Tight2012_zIPdBCut = cms.vstring("Tight2012_zIPdBCut", "Tight2012_zIPdBCutVar", "0.5")
+        process.TnP_MuonID.Categories.CutBasedIdGlobalHighPt  = cms.vstring("PassHighptid", "dummy[pass=1,fail=0]")
+        process.TnP_MuonID.Expressions.CutBasedIdGlobalHighPtVar = cms.vstring("CutBasedIdGlobalHighPtVar", "CutBasedIdGlobalHighPt==1", "CutBasedIdGlobalHighPt")
+        process.TnP_MuonID.Cuts.HighptCutid  = cms.vstring("HighptCutid", "CutBasedIdGlobalHighPtVar", "0.5")
     elif num == "trkhighptid":
         process.TnP_MuonID.Categories.CutBasedIdTrkHighPt  = cms.vstring("PasstrkHighptid", "dummy[pass=1,fail=0]")
         process.TnP_MuonID.Expressions.CutBasedIdTrkHighPtVar = cms.vstring("CutBasedIdTrkHighPtVar", "CutBasedIdTrkHighPt==1", "CutBasedIdTrkHighPt")
@@ -114,113 +43,78 @@ def FillNumDen(num, den):
         process.TnP_MuonID.Categories.SoftCutBasedId  = cms.vstring("PassSoftid", "dummy[pass=1,fail=0]")
         process.TnP_MuonID.Expressions.SoftCutBasedIdVar = cms.vstring("SoftCutBasedIdVar", "SoftCutBasedId==1", "SoftCutBasedId")
         process.TnP_MuonID.Cuts.SoftCutid  = cms.vstring("SoftCutid", "SoftCutBasedIdVar", "0.5")
-
-####
-#    elif num == "highptid":
-#        process.TnP_MuonID.Categories.CutBasedIdGlobalHighPt  = cms.vstring("PassHighptid", "dummy[pass=1,fail=0]")
-#        process.TnP_MuonID.Expressions.CutBasedIdGlobalHighPtVar = cms.vstring("CutBasedIdGlobalHighPtVar", "CutBasedIdGlobalHighPt==1", "CutBasedIdGlobalHighPt")
-#        process.TnP_MuonID.Cuts.HighptCutid  = cms.vstring("HighptCutid", "CutBasedIdGlobalHighPtVar", "0.5")
-#    elif num == "trkhighptid":
-#        process.TnP_MuonID.Categories.CutBasedIdTrkHighPt  = cms.vstring("PasstrkHighptid", "dummy[pass=1,fail=0]")
-#        process.TnP_MuonID.Expressions.CutBasedIdTrkHighPtVar = cms.vstring("CutBasedIdTrkHighPtVar", "CutBasedIdTrkHighPt==1", "CutBasedIdTrkHighPt")
-#        process.TnP_MuonID.Cuts.trkHighptCutid  = cms.vstring("trkHighptCutid", "CutBasedIdTrkHighPtVar", "0.5")
-#    elif num == "softid":
-#        process.TnP_MuonID.Categories.SoftCutBasedId  = cms.vstring("PassSoftid", "dummy[pass=1,fail=0]")
-#        process.TnP_MuonID.Expressions.SoftCutBasedIdVar = cms.vstring("SoftCutBasedIdVar", "SoftCutBasedId==1", "SoftCutBasedId")
-#        process.TnP_MuonID.Cuts.SoftCutid  = cms.vstring("SoftCutid", "SoftCutBasedIdVar", "0.5")
-#    elif num == "softmvaid":
-#        process.TnP_MuonID.Categories.SoftMvaId  = cms.vstring("PassSofMvatid", "dummy[pass=1,fail=0]")
-#        process.TnP_MuonID.Expressions.SoftMvaIdVar = cms.vstring("SoftMvaIdVar", "SoftMvaId==1", "SoftMvaId")
-#        process.TnP_MuonID.Cuts.SoftMvaCutid  = cms.vstring("SoftMvaCutid", "SoftMvaIdVar", "0.5")
-#    elif num == "mvaloose":
-#        process.TnP_MuonID.Categories.MvaLoose  = cms.vstring("PassMvaLoose", "dummy[pass=1,fail=0]")
-#        process.TnP_MuonID.Expressions.MvaLooseVar = cms.vstring("MvaLooseVar", "MvaLoose==1", "MvaLoose")
-#        process.TnP_MuonID.Cuts.MvaLooseCutid  = cms.vstring("MvaLooseCutid", "MvaLooseVar", "0.5")
-#    elif num == "mvamedium":
-#        process.TnP_MuonID.Categories.MvaMedium  = cms.vstring("PassMvaMedium", "dummy[pass=1,fail=0]")
-#        process.TnP_MuonID.Expressions.MvaMediumVar = cms.vstring("MvaMediumVar", "MvaMedium==1", "MvaMedium")
-#        process.TnP_MuonID.Cuts.MvaMediumCutid  = cms.vstring("MvaMediumCutid", "MvaMediumVar", "0.5")
-#    elif num == "mvatight":
-#        process.TnP_MuonID.Categories.MvaTight  = cms.vstring("PassMvaTight", "dummy[pass=1,fail=0]")
-#        process.TnP_MuonID.Expressions.MvaTightVar = cms.vstring("MvaTightVar", "MvaTight==1", "MvaTight")
-#        process.TnP_MuonID.Cuts.MvaTightCutid  = cms.vstring("MvaTightCutid", "MvaTightVar", "0.5")
-#    elif num == "looseiso":
-#        process.TnP_MuonID.Categories.PFIsoLoose  = cms.vstring("PassLooseiso", "dummy[pass=1,fail=0]")
-#        process.TnP_MuonID.Expressions.PFIsoLooseVar = cms.vstring("PFIsoLooseVar", "PFIsoLoose==1", "PFIsoLoose")
-#        process.TnP_MuonID.Cuts.LooseCutiso  = cms.vstring("LooseCutiso", "PFIsoLooseVar", "0.5")
-#    elif num == "mediumiso":
-#        process.TnP_MuonID.Categories.PFIsoMedium  = cms.vstring("PassMediumiso", "dummy[pass=1,fail=0]")
-#        process.TnP_MuonID.Expressions.PFIsoMediumVar = cms.vstring("PFIsoMediumVar", "PFIsoMedium==1", "PFIsoMedium")
-#        process.TnP_MuonID.Cuts.MediumCutiso  = cms.vstring("MediumCutiso", "PFIsoMediumVar", "0.5")
-#    elif num == "tightiso":
-#        process.TnP_MuonID.Categories.PFIsoTight  = cms.vstring("PassTightiso", "dummy[pass=1,fail=0]")
-#        process.TnP_MuonID.Expressions.PFIsoTightVar = cms.vstring("PFIsoTightVar", "PFIsoTight==1", "PFIsoTight")
-#        process.TnP_MuonID.Cuts.TightCutiso  = cms.vstring("TightCutiso", "PFIsoTightVar", "0.5")
-#    elif num == "miniisotight":
-#        process.TnP_MuonID.Categories.MiniIsoTight  = cms.vstring("PassMiniIsoTight", "dummy[pass=1,fail=0]")
-#        process.TnP_MuonID.Expressions.MiniIsoTightVar = cms.vstring("MiniIsoTightVar", "MiniIsoTight==1", "MiniIsoTight")
-#        process.TnP_MuonID.Cuts.MiniIsoTightCut  = cms.vstring("MiniIsoTightCut", "MiniIsoTightVar", "0.5")
-#    elif num == "tklooseiso":
-#        process.TnP_MuonID.Categories.TkIsoLoose  = cms.vstring("PasstrkLooseiso", "dummy[pass=1,fail=0]")
-#        process.TnP_MuonID.Expressions.TkIsoLooseVar = cms.vstring("TkIsoLooseVar", "TkIsoLoose==1", "TkIsoLoose")
-#        process.TnP_MuonID.Cuts.TrkLooseCutiso  = cms.vstring("TrkLooseCutiso", "TkIsoLooseVar", "0.5")
-
+    elif num == "softmvaid":
+        process.TnP_MuonID.Categories.SoftMvaId  = cms.vstring("PassSofMvatid", "dummy[pass=1,fail=0]")
+        process.TnP_MuonID.Expressions.SoftMvaIdVar = cms.vstring("SoftMvaIdVar", "SoftMvaId==1", "SoftMvaId")
+        process.TnP_MuonID.Cuts.SoftMvaCutid  = cms.vstring("SoftMvaCutid", "SoftMvaIdVar", "0.5")
+    elif num == "mvaloose":
+        process.TnP_MuonID.Categories.MvaLoose  = cms.vstring("PassMvaLoose", "dummy[pass=1,fail=0]")
+        process.TnP_MuonID.Expressions.MvaLooseVar = cms.vstring("MvaLooseVar", "MvaLoose==1", "MvaLoose")
+        process.TnP_MuonID.Cuts.MvaLooseCutid  = cms.vstring("MvaLooseCutid", "MvaLooseVar", "0.5")
+    elif num == "mvamedium":
+        process.TnP_MuonID.Categories.MvaMedium  = cms.vstring("PassMvaMedium", "dummy[pass=1,fail=0]")
+        process.TnP_MuonID.Expressions.MvaMediumVar = cms.vstring("MvaMediumVar", "MvaMedium==1", "MvaMedium")
+        process.TnP_MuonID.Cuts.MvaMediumCutid  = cms.vstring("MvaMediumCutid", "MvaMediumVar", "0.5")
+    elif num == "mvatight":
+        process.TnP_MuonID.Categories.MvaTight  = cms.vstring("PassMvaTight", "dummy[pass=1,fail=0]")
+        process.TnP_MuonID.Expressions.MvaTightVar = cms.vstring("MvaTightVar", "MvaTight==1", "MvaTight")
+        process.TnP_MuonID.Cuts.MvaTightCutid  = cms.vstring("MvaTightCutid", "MvaTightVar", "0.5")
+    elif num == "looseiso":
+        process.TnP_MuonID.Categories.PFIsoLoose  = cms.vstring("PassLooseiso", "dummy[pass=1,fail=0]")
+        process.TnP_MuonID.Expressions.PFIsoLooseVar = cms.vstring("PFIsoLooseVar", "PFIsoLoose==1", "PFIsoLoose")
+        process.TnP_MuonID.Cuts.LooseCutiso  = cms.vstring("LooseCutiso", "PFIsoLooseVar", "0.5")
+    elif num == "mediumiso":
+        process.TnP_MuonID.Categories.PFIsoMedium  = cms.vstring("PassMediumiso", "dummy[pass=1,fail=0]")
+        process.TnP_MuonID.Expressions.PFIsoMediumVar = cms.vstring("PFIsoMediumVar", "PFIsoMedium==1", "PFIsoMedium")
+        process.TnP_MuonID.Cuts.MediumCutiso  = cms.vstring("MediumCutiso", "PFIsoMediumVar", "0.5")
+    elif num == "tightiso":
+        process.TnP_MuonID.Categories.PFIsoTight  = cms.vstring("PassTightiso", "dummy[pass=1,fail=0]")
+        process.TnP_MuonID.Expressions.PFIsoTightVar = cms.vstring("PFIsoTightVar", "PFIsoTight==1", "PFIsoTight")
+        process.TnP_MuonID.Cuts.TightCutiso  = cms.vstring("TightCutiso", "PFIsoTightVar", "0.5")
+    elif num == "miniisotight":
+        process.TnP_MuonID.Categories.MiniIsoTight  = cms.vstring("PassMiniIsoTight", "dummy[pass=1,fail=0]")
+        process.TnP_MuonID.Expressions.MiniIsoTightVar = cms.vstring("MiniIsoTightVar", "MiniIsoTight==1", "MiniIsoTight")
+        process.TnP_MuonID.Cuts.MiniIsoTightCut  = cms.vstring("MiniIsoTightCut", "MiniIsoTightVar", "0.5")
+    elif num == "tklooseiso":
+        process.TnP_MuonID.Categories.TkIsoLoose  = cms.vstring("PasstrkLooseiso", "dummy[pass=1,fail=0]")
+        process.TnP_MuonID.Expressions.TkIsoLooseVar = cms.vstring("TkIsoLooseVar", "TkIsoLoose==1", "TkIsoLoose")
+        process.TnP_MuonID.Cuts.TrkLooseCutiso  = cms.vstring("TrkLooseCutiso", "TkIsoLooseVar", "0.5")
+    elif num == "tktightiso":
+        process.TnP_MuonID.Categories.TkIsoTight  = cms.vstring("PasstrkTightiso", "dummy[pass=1,fail=0]")
+        process.TnP_MuonID.Expressions.TkIsoTightVar = cms.vstring("TkIsoTightVar", "TkIsoTight==1", "TkIsoTight")
+        process.TnP_MuonID.Cuts.TrkTightCutiso  = cms.vstring("TrkTightCutiso", "TkIsoTightVar", "0.5")
+    elif num == "tightidhww":
+        process.TnP_MuonID.Variables.dzPV  = cms.vstring("dzPV", "-1000", "1000", "")
+        process.TnP_MuonID.Variables.dB  = cms.vstring("dB", "-1000", "1000", "")
+        process.TnP_MuonID.Categories.CutBasedIdTight = cms.vstring("Tight Id. HWW Muon", "dummy[pass=1,fail=0]")
+        process.TnP_MuonID.Expressions.Tight2012_zIPdBCutVar = cms.vstring("Tight2012_zIPdBCut", "CutBasedIdTight==1 && abs(dzPV) < 0.1 && abs(dB) < 0.02", "CutBasedIdTight", "dzPV", "dB")
+        process.TnP_MuonID.Cuts.Tight2012_zIPdBCut = cms.vstring("Tight2012_zIPdBCut", "Tight2012_zIPdBCutVar", "0.5")
         #FOR TRACKER MUONS
-#    elif num == "trackermuons":
-#        process.TnP_MuonID.Categories.TM  = cms.vstring("PassTM", "dummy[pass=1,fail=0]")
-#        process.TnP_MuonID.Expressions.TMVar = cms.vstring("TMVar", "TM==1", "TM")
-#        process.TnP_MuonID.Cuts.TMCut  = cms.vstring("TMCut", "TMVar", "0.5")
-#        process.TnP_MuonID.Variables.dzPV  = cms.vstring("dzPV", "-1000", "1000", "")
-#        process.TnP_MuonID.Categories.HighPt = cms.vstring("High-pT Id. Muon", "dummy[pass=1,fail=0]")
-#        process.TnP_MuonID.Expressions.HighPt_zIPCutVar = cms.vstring("HighPt_zIPCut", "HighPt == 1 && abs(dzPV) < 0.5", "HighPt", "dzPV")
-#        process.TnP_MuonID.Cuts.HighPt_zIPCut = cms.vstring("HighPt_zIPCut", "HighPt_zIPCutVar", "0.5")
-#    elif num == "looseiso":
-#        process.TnP_MuonID.Variables.combRelIsoPF04dBeta = cms.vstring("dBeta rel iso dR 0.4", "-2", "9999999", "")
-#        process.TnP_MuonID.Cuts.LooseIso4 = cms.vstring("LooseIso4" ,"combRelIsoPF04dBeta", "0.25")
-#    elif num == "tightiso":
-#        process.TnP_MuonID.Variables.combRelIsoPF04dBeta = cms.vstring("dBeta rel iso dR 0.4", "-2", "9999999", "")
-#        process.TnP_MuonID.Cuts.TightIso4 = cms.vstring("TightIso4" ,"combRelIsoPF04dBeta", "0.15")
-#    elif num == "tklooseiso":
-#        process.TnP_MuonID.Variables.relTkIso = cms.vstring("trk rel iso dR 0.3", "-2", "9999999", "")
-#        process.TnP_MuonID.Cuts.LooseTkIso3 = cms.vstring("LooseTkIso3" ,"relTkIso", "0.10")
-#    #DEN
-#    if den == "looseid":
-#        process.TnP_MuonID.Categories.PF  = cms.vstring("PF Muon", "dummy[pass=1,fail=0]")
-#    elif den == "mediumid":
-#        process.TnP_MuonID.Categories.Medium = cms.vstring("Medium Id.", "dummy[pass=1,fail=0]")
-#    elif den == "tightid":
-#        process.TnP_MuonID.Variables.dzPV  = cms.vstring("dzPV", "-1000", "1000", "")
-#        process.TnP_MuonID.Categories.Tight2012 = cms.vstring("Tight Id. Muon", "dummy[pass=1,fail=0]")
-#    elif den == "tightidhww":
-#        process.TnP_MuonID.Variables.dzPV  = cms.vstring("dzPV", "-1000", "1000", "")
-#        process.TnP_MuonID.Variables.dB  = cms.vstring("dB", "-1000", "1000", "")
-#        process.TnP_MuonID.Categories.Tight2012 = cms.vstring("Tight Id. HWW Muon", "dummy[pass=1,fail=0]")
-#        process.TnP_MuonID.Expressions.Tight2012_zIPdBCutVar = cms.vstring("Tight2012_zIPdBCut", "Tight2012 == 1 && abs(dzPV) < 0.1 && abs(dB) < 0.02", "Tight2012", "dzPV", "dB")
-#        process.TnP_MuonID.Cuts.Tight2012_zIPdBCut = cms.vstring("Tight2012_zIPdBCut", "Tight2012_zIPdBCutVar", "0.5")
+    elif num == "trackermuons":
+        process.TnP_MuonID.Categories.TM  = cms.vstring("PassTM", "dummy[pass=1,fail=0]")
+        process.TnP_MuonID.Expressions.TMVar = cms.vstring("TMVar", "TM==1", "TM")
+        process.TnP_MuonID.Cuts.TMCut  = cms.vstring("TMCut", "TMVar", "0.5")
 
-#    elif den == "highptid":
- #       process.TnP_MuonID.Variables.dzPV  = cms.vstring("dzPV", "-1000", "1000", "")
-#        process.TnP_MuonID.Categories.HighPt = cms.vstring("High-pT Id. Muon", "dummy[pass=1,fail=0]")
-#        process.TnP_MuonID.Expressions.HighPt_zIPCutVar = cms.vstring("HighPt_zIPCut", "HighPt == 1 && abs(dzPV) < 0.5", "HighPt", "dzPV")
-#        process.TnP_MuonID.Cuts.HighPt_zIPCut = cms.vstring("HighPt_zIPCut", "HighPt_zIPCutVar", "0.5")
 
-###################
-    
-#    if den == "looseid":
-#        process.TnP_MuonID.Categories.CutBasedIdLoose  = cms.vstring("PassLooseid", "dummy[pass=1,fail=0]")
-#    elif den == "mediumid":
-#        process.TnP_MuonID.Categories.CutBasedIdMedium = cms.vstring("PassMediumid", "dummy[pass=1,fail=0]")
-#    elif den == "tightid":
-#        process.TnP_MuonID.Categories.CutBasedIdTight = cms.vstring("PassTightid", "dummy[pass=1,fail=0]")
-#    elif den == "highptid":
-#        process.TnP_MuonID.Categories.CutBasedIdGlobalHighPt  = cms.vstring("PassHighptid", "dummy[pass=1,fail=0]")
-#    elif den == "trkhighptid":
-#        process.TnP_MuonID.Categories.CutBasedIdTrkHighPt  = cms.vstring("PasstrkHighptid", "dummy[pass=1,fail=0]")
-#    # Added for low pT bins -> ID / trackerMuons
-#    elif den == "trackermuons":
-#        process.TnP_MuonID.Categories.TM  = cms.vstring("PassTM", "dummy[pass=1,fail=0]")
-#
-
+    if den == "looseid":
+        process.TnP_MuonID.Categories.CutBasedIdLoose  = cms.vstring("PassLooseid", "dummy[pass=1,fail=0]")
+    elif den == "mediumid":
+        process.TnP_MuonID.Categories.CutBasedIdMedium = cms.vstring("PassMediumid", "dummy[pass=1,fail=0]")
+    elif den == "tightid":
+        process.TnP_MuonID.Categories.CutBasedIdTight = cms.vstring("PassTightid", "dummy[pass=1,fail=0]")
+    elif den == "highptid":
+        process.TnP_MuonID.Categories.CutBasedIdGlobalHighPt  = cms.vstring("PassHighptid", "dummy[pass=1,fail=0]")
+    elif den == "trkhighptid":
+        process.TnP_MuonID.Categories.CutBasedIdTrkHighPt  = cms.vstring("PasstrkHighptid", "dummy[pass=1,fail=0]")
+    # Added for low pT bins -> ID / trackerMuons
+    elif den == "trackermuons":
+        process.TnP_MuonID.Categories.TM  = cms.vstring("PassTM", "dummy[pass=1,fail=0]")
+    elif den == "tightidhww":
+        process.TnP_MuonID.Variables.dzPV  = cms.vstring("dzPV", "-1000", "1000", "")
+        process.TnP_MuonID.Variables.dB  = cms.vstring("dB", "-1000", "1000", "")
+        process.TnP_MuonID.Categories.CutBasedIdTight = cms.vstring("Tight Id. HWW Muon", "dummy[pass=1,fail=0]")
+        process.TnP_MuonID.Expressions.Tight2012_zIPdBCutVar = cms.vstring("Tight2012_zIPdBCut", "CutBasedIdTight == 1 && abs(dzPV) < 0.1 && abs(dB) < 0.02", "CutBasedIdTight", "dzPV", "dB")
+        process.TnP_MuonID.Cuts.Tight2012_zIPdBCut = cms.vstring("Tight2012_zIPdBCut", "Tight2012_zIPdBCutVar", "0.5")
 ###
                                     
 def FillVariables(par):
@@ -288,20 +182,31 @@ def FillBin(par):
 
 
  #Selections
- #Selections
     if den == "gentrack": pass
-    elif den == "looseid": DEN.PF = cms.vstring("pass")
-    elif den == "mediumid": DEN.Medium = cms.vstring("pass")
-    elif den == "tightid": 
-        DEN.Tight2012 = cms.vstring("pass")
-        DEN.dzPV = cms.vdouble(-0.5, 0.5)
+    elif den == "trackermuons": DEN.TM = cms.vstring("pass") #For low pT ID efficiencies
+    elif den == "looseid": DEN.CutBasedIdLoose = cms.vstring("pass")
+    elif den == "mediumid": DEN.CutBasedIdMedium = cms.vstring("pass")
+    elif den == "tightid": DEN.CutBasedIdTight = cms.vstring("pass")
+    elif den == "highptid": DEN.CutBasedIdGlobalHighPt = cms.vstring("pass")
+    elif den == "trkhighptid": DEN.CutBasedIdTrkHighPt = cms.vstring("pass")
     elif den == "tightidhww":
-        DEN.Tight2012 = cms.vstring("pass")
+        DEN.CutBasedIdTight = cms.vstring("pass")
         DEN.dzPV = cms.vdouble(-0.1, 0.1)
         DEN.dB = cms.vdouble(0.0, 0.02)
-    elif den == "highptid":
-        DEN.HighPt = cms.vstring("pass")
-        DEN.dzPV = cms.vdouble(-0.5, 0.5)
+ #Selections
+#    if den == "gentrack": pass
+#    elif den == "looseid": DEN.PF = cms.vstring("pass")
+#    elif den == "mediumid": DEN.Medium = cms.vstring("pass")
+#    elif den == "tightid": 
+#        DEN.Tight2012 = cms.vstring("pass")
+#        DEN.dzPV = cms.vdouble(-0.5, 0.5)
+#    elif den == "tightidhww":
+#        DEN.Tight2012 = cms.vstring("pass")
+#        DEN.dzPV = cms.vdouble(-0.1, 0.1)
+#        DEN.dB = cms.vdouble(0.0, 0.02)
+#    elif den == "highptid":
+#        DEN.HighPt = cms.vstring("pass")
+#        DEN.dzPV = cms.vdouble(-0.5, 0.5)
 #    if den == "gentrack": pass
 #    elif den == "trackermuons": DEN.TM = cms.vstring("pass") #For low pT ID efficiencies
 #    elif den == "looseid": DEN.CutBasedIdLoose = cms.vstring("pass")
@@ -368,18 +273,27 @@ process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(1000) )
 #    sys.exit()
 #if not par in  ['pt', 'eta', 'vtx', 'pt_eta', 'newpt', 'newpt_eta', 'tag_instLumi', 'pair_deltaR']:
 #    print '@ERROR: par should be', ['pt', 'eta', 'vtx', 'pt_eta', 'newpt', 'newpt_eta', 'tag_instLumi', 'pair_deltaR'], 'You used', par, '.Abort'
-
-#_*_*_*_*_*_*_*_*_*_*_*_*
-#Prepare variables, den, num and fit funct
-#_*_*_*_*_*_*_*_*_*_*_*_*
-if not num  in ['looseid', 'mediumid', 'tightid', 'tightidhww', 'puppiIso', 'puppiIsoNoLep', 'combpuppiIso','muCleanerIII', 'muCleanerIV', 'highptid', 'looseiso', 'tightiso', 'tklooseiso']:
-    print '@ERROR: num should be in ',['looseid', 'mediumid', 'tightid', 'tightidhww', 'puppiIso', 'puppiIsoNoLep', 'combpuppiIso', 'muCleanerIII', 'muCleanerIV', 'highptid', 'looseiso', 'tightiso', 'tklooseiso'], 'You used', num, '.Abort'
+if not num  in ['looseid', 'mediumid', 'mediumidprompt', 'tightid', 'tightidhww', 'puppiIso', 'puppiIsoNoLep', 'combpuppiIso','muCleanerIII', 'muCleanerIV', 'highptid', 'trkhighptid', 'softid', 'softmvaid', 'mvaloose', 'mvamedium', 'mvatight', 'looseiso', 'tightiso', 'tklooseiso', 'tktightiso', 'mediumiso', 'miniisotight', 'trackermuons']:
+    print '@ERROR: num should be in ',['looseid', 'mediumid', 'tightid', 'tightidhww', 'puppiIso', 'puppiIsoNoLep', 'combpuppiIso', 'muCleanerIII', 'muCleanerIV', 'highptid', 'looseiso', 'tightiso', 'tklooseiso', 'mediumiso'], 'You used', num, '.Abort'
     sys.exit()
-if not den in ['looseid', 'mediumid', 'tightid', 'tightidhww', 'highptid', 'gentrack']:
+if not den in ['looseid', 'mediumid', 'tightid', 'tightidhww', 'highptid', 'gentrack', 'trkhighptid', 'trackermuons']:
     print '@ERROR: den should be',['looseid', 'mediumid', 'tightid', 'tightidhww', 'highptid'], 'You used', den, '.Abort'
     sys.exit()
 if not par in  ['pt', 'eta', 'vtx', 'pt_eta', 'newpt', 'newpt_eta', 'tag_instLumi', 'pair_deltaR']:
     print '@ERROR: par should be', ['pt', 'eta', 'vtx', 'pt_eta', 'newpt', 'newpt_eta', 'tag_instLumi', 'pair_deltaR'], 'You used', par, '.Abort'
+
+#_*_*_*_*_*_*_*_*_*_*_*_*
+#_*_*_*_*_*_*_*_*_*_*_*_*
+#Prepare variables, den, num and fit funct
+#_*_*_*_*_*_*_*_*_*_*_*_*
+#if not num  in ['looseid', 'mediumid', 'tightid', 'tightidhww', 'puppiIso', 'puppiIsoNoLep', 'combpuppiIso','muCleanerIII', 'muCleanerIV', 'highptid', 'looseiso', 'tightiso', 'tklooseiso']:
+#    print '@ERROR: num should be in ',['looseid', 'mediumid', 'tightid', 'tightidhww', 'puppiIso', 'puppiIsoNoLep', 'combpuppiIso', 'muCleanerIII', 'muCleanerIV', 'highptid', 'looseiso', 'tightiso', 'tklooseiso'], 'You used', num, '.Abort'
+#    sys.exit()
+#if not den in ['looseid', 'mediumid', 'tightid', 'tightidhww', 'highptid', 'gentrack']:
+#    print '@ERROR: den should be',['looseid', 'mediumid', 'tightid', 'tightidhww', 'highptid'], 'You used', den, '.Abort'
+#    sys.exit()
+#if not par in  ['pt', 'eta', 'vtx', 'pt_eta', 'newpt', 'newpt_eta', 'tag_instLumi', 'pair_deltaR']:
+#    print '@ERROR: par should be', ['pt', 'eta', 'vtx', 'pt_eta', 'newpt', 'newpt_eta', 'tag_instLumi', 'pair_deltaR'], 'You used', par, '.Abort'
 
 #_*_*_*_*_*_*_*_*_*_*_*_*
 #Prepare variables, den, num and fit funct
