@@ -738,7 +738,8 @@ if sample == "mc_RunF":
 #        )  
 
 
-if scenario == "mc_all":
+#if scenario == "mc_all":
+if scenario == "mc":
     print "Including the weight for MC"
     process.TnP_MuonID.WeightVariable = cms.string("weight")
     process.TnP_MuonID.Variables.weight = cms.vstring("weight","0","10","")
@@ -894,7 +895,9 @@ for ID, ALLBINS in ID_BINS:
                     BinnedVariables = DEN,
                     BinToPDFmap = shape
                     ))
-    elif scenario == 'mc_all' and par!='vtx':
+    #elif scenario == 'mc_all' and par!='vtx':
+    elif scenario == 'mc' and par!='vtx':
+	print 'MC sample as function of nVertices -> the PU reweighting will be applied'
         if num_.find("Iso4") != -1 or num_.find("Iso3") != -1:
             setattr(module.Efficiencies, ID+"_"+X, cms.PSet(
                 EfficiencyCategoryAndState = cms.vstring(num_,"below"),
