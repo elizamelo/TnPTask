@@ -1,0 +1,18 @@
+The iteration is Run2016B_H
+The den is looseid
+The den is gentrack
+Will run scenario  data
+The sample is data_all
+The binning is pt
+Will use the standard fit functions for the backgroud
+debug1
+debug1
+den is gentrack dic genTracks
+num is looseid dic LooseID
+par is pt
+debug5
+Loose_noIP
+('NUM_LooseID_DEN_genTracks_PAR_pt', cms.PSet(
+
+))
+den is gentrack
