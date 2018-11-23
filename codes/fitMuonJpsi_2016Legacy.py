@@ -821,7 +821,7 @@ for ID, ALLBINS in ID_BINS:
         os.makedirs(_output)
     module = process.TnP_MuonID.clone(OutputFileName = cms.string(_output + "/TnP_MC_%s.root" % (X)))
     #save the fitconfig in the plot directory
-    shutil.copyfile(os.getcwd()+'/fitMuonJpsi.py',_output+'/fitMuonJpsi.py')
+    shutil.copyfile(os.getcwd()+'/fitMuonJpsi_2016Legacy.py',_output+'/fitMuonJpsi_2016Legacy.py')
     shape = cms.vstring("CBPlusExpo") # J/Psi Fit likes 2016 studies for low pT 
 
 
