@@ -500,53 +500,13 @@ print 'Using bins for fit ==', binf
 if sample == "data_all":                                                                                                                  
     process.TnP_MuonID = Template.clone(                                                                                                 
        InputFileNames = cms.vstring(
-'/eos/user/e/eliza/TnP/inputfiles/DATA/Reco2018/TnPTreeJPsi_17Sep2018_Charmonium_Run2018Av1_GoldenJSON_skimtree_12022019.root', 
-'/eos/user/e/eliza/TnP/inputfiles/DATA/Reco2018/TnPTreeJPsi_17Sep2018_Charmonium_Run2018Bv1_GoldenJSON_skimtree_12022019.root',
-'/eos/user/e/eliza/TnP/inputfiles/DATA/Reco2018/TnPTreeJPsi_17Sep2018_Charmonium_Run2018Cv1_GoldenJSON_skimtree_12022019.root', 
-'/eos/user/e/eliza/TnP/inputfiles/DATA/TnPTreeJPsi_Charmonium_Run2018Dv2_GoldenJSON_321222_to_323523_skimTree_30Oct2018.root',
-'/eos/user/e/eliza/TnP/inputfiles/DATA/TnPTreeJPsi_Charmonium_Run2018Dv2_GoldenJSON_323524_to_End_skimTree_17Dec2018.root',
-'/eos/user/e/eliza/TnP/inputfiles/DATA/TnPTreeJPsi_Charmonium_Run2018Dv2_GoldenJSON_Upto321221_skimTree_19Oct2018.root'
-#'/eos/user/e/eliza/TnP/inputfiles/DATA/2016Legacy/TnPTreeJPsi_LegacyRereco07Aug17_Charmonium_Run2016Bver2_GoldenJSON.root',
-#'/eos/user/e/eliza/TnP/inputfiles/DATA/2016Legacy/TnPTreeJPsi_LegacyRereco07Aug17_Charmonium_Run2016C_GoldenJSON.root',
-#'/eos/user/e/eliza/TnP/inputfiles/DATA/2016Legacy/TnPTreeJPsi_LegacyRereco07Aug17_Charmonium_Run2016D_GoldenJSON.root',
-#'/eos/user/e/eliza/TnP/inputfiles/DATA/2016Legacy/TnPTreeJPsi_LegacyRereco07Aug17_Charmonium_Run2016E_GoldenJSON.root',
-#'/eos/user/e/eliza/TnP/inputfiles/DATA/2016Legacy/TnPTreeJPsi_LegacyRereco07Aug17_Charmonium_Run2016F_GoldenJSON.root',
-#'/eos/user/e/eliza/TnP/inputfiles/DATA/2016Legacy/TnPTreeJPsi_LegacyRereco07Aug17_Charmonium_Run2016G_GoldenJSON.root',
-#'/eos/user/e/eliza/TnP/inputfiles/DATA/2016Legacy/TnPTreeJPsi_LegacyRereco07Aug17_Charmonium_Run2016H_GoldenJSON.root'
-###new 2016 legacy
-#'/eos/user/e/eliza/TnP/inputfiles/DATA/2016Legacy/16Nov2018/TnPTreeJPsi_LegacyRereco07Aug17_Charmonium_Run2016Bver2_GoldenJSON_skimTree_16Nov2018.root',
-#'/eos/user/e/eliza/TnP/inputfiles/DATA/2016Legacy/16Nov2018/TnPTreeJPsi_LegacyRereco07Aug17_Charmonium_Run2016C_GoldenJSON_skimTree_16Nov2018.root',
-#'/eos/user/e/eliza/TnP/inputfiles/DATA/2016Legacy/16Nov2018/TnPTreeJPsi_LegacyRereco07Aug17_Charmonium_Run2016D_GoldenJSON_skimTree_16Nov2018.root',
-#'/eos/user/e/eliza/TnP/inputfiles/DATA/2016Legacy/16Nov2018/TnPTreeJPsi_LegacyRereco07Aug17_Charmonium_Run2016E_GoldenJSON_skimTree_16Nov2018.root',
-#'/eos/user/e/eliza/TnP/inputfiles/DATA/2016Legacy/16Nov2018/TnPTreeJPsi_LegacyRereco07Aug17_Charmonium_Run2016F_GoldenJSON_skimTree_16Nov2018.root',
-#'/eos/user/e/eliza/TnP/inputfiles/DATA/2016Legacy/16Nov2018/TnPTreeJPsi_LegacyRereco07Aug17_Charmonium_Run2016G_GoldenJSON_skimTree_16Nov2018.root',
-#'/eos/user/e/eliza/TnP/inputfiles/DATA/2016Legacy/16Nov2018/TnPTreeJPsi_LegacyRereco07Aug17_Charmonium_Run2016H_GoldenJSON_skimTree_16Nov2018.root'
-##########################
-#'/eos/user/e/eliza/TnP/inputfiles/DATA/TnPTreeJPsi_Charmonium_Run2018Av1_GoldenJSON_skimTree_19Oct2018.root',
-#'/eos/user/e/eliza/TnP/inputfiles/DATA/TnPTreeJPsi_Charmonium_Run2018Av2_GoldenJSON_skimTree_19Oct2018.root',
-#'/eos/user/e/eliza/TnP/inputfiles/DATA/TnPTreeJPsi_Charmonium_Run2018Av3_GoldenJSON_skimTree_19Oct2018.root',
-#'/eos/user/e/eliza/TnP/inputfiles/DATA/TnPTreeJPsi_Charmonium_Run2018Bv1_GoldenJSON_skimTree_19Oct2018.root',
-#'/eos/user/e/eliza/TnP/inputfiles/DATA/TnPTreeJPsi_Charmonium_Run2018Bv2_GoldenJSON_skimTree_19Oct2018.root',
-#'/eos/user/e/eliza/TnP/inputfiles/DATA/TnPTreeJPsi_Charmonium_Run2018Cv1_GoldenJSON_skimTree_19Oct2018.root',
-#'/eos/user/e/eliza/TnP/inputfiles/DATA/TnPTreeJPsi_Charmonium_Run2018Cv2_GoldenJSON_skimTree_19Oct2018.root',
-#'/eos/user/e/eliza/TnP/inputfiles/DATA/TnPTreeJPsi_Charmonium_Run2018Cv3_GoldenJSON_skimTree_19Oct2018.root',
-#'/eos/user/e/eliza/TnP/inputfiles/DATA/TnPTreeJPsi_Charmonium_Run2018Dv2_GoldenJSON_Upto321221_skimTree_19Oct2018.root',
-#'/eos/user/e/eliza/TnP/inputfiles/DATA/TnPTreeJPsi_Charmonium_Run2018Dv2_GoldenJSON_321222_to_323523_skimTree_30Oct2018.root'
-#	'/eos/user/e/eliza/TnP/inputfiles/DATA/2018/TnPTreeJPsi_Charmonium_Run2018Av1_GoldenJSON.root',
-#	'/eos/user/e/eliza/TnP/inputfiles/DATA/2018/TnPTreeJPsi_Charmonium_Run2018Av2_GoldenJSON.root',
-#	'/eos/user/e/eliza/TnP/inputfiles/DATA/2018/TnPTreeJPsi_Charmonium_Run2018Av3_GoldenJSON.root',
-#	'/eos/user/e/eliza/TnP/inputfiles/DATA/2018/TnPTreeJPsi_Charmonium_Run2018Bv1_GoldenJSON.root',
-#	'/eos/user/e/eliza/TnP/inputfiles/DATA/2018/TnPTreeJPsi_Charmonium_Run2018Bv2_GoldenJSON.root',
-#	'/eos/user/e/eliza/TnP/inputfiles/DATA/2018/TnPTreeJPsi_Charmonium_Run2018Cv1_GoldenJSON.root',
-#	'/eos/user/e/eliza/TnP/inputfiles/DATA/2018/TnPTreeJPsi_Charmonium_Run2018Cv2_GoldenJSON.root',
-#	'/eos/user/e/eliza/TnP/inputfiles/DATA/2018/TnPTreeJPsi_Charmonium_Run2018Cv3_GoldenJSON.root',
-#	'/eos/user/e/eliza/TnP/inputfiles/DATA/2018/TnPTreeJPsi_Charmonium_Run2018Dv2_GoldenJSON_Upto321221.root'
-           #IMPORTANT: Only use this dataset for test. Need to skim to produce the final efficiency studies
-#           '/eos/user/s/sfonseca/Jpsi2017TnPTree/skimmed_Feb_19_2018_Data/TnPTreeJPsi_17Nov2017_Charmonium_Run2017Bv1_Full_GoldenJSON_BUGFIX_skimmed.root',
- #          '/eos/user/s/sfonseca/Jpsi2017TnPTree/skimmed_Feb_19_2018_Data/TnPTreeJPsi_17Nov2017_Charmonium_Run2017Cv1_Full_GoldenJSON_skimmed.root',
-#           '/eos/user/s/sfonseca/Jpsi2017TnPTree/skimmed_Feb_19_2018_Data/TnPTreeJPsi_17Nov2017_Charmonium_Run2017Dv1_Full_GoldenJSON_skimmed.root',
-#           '/eos/user/s/sfonseca/Jpsi2017TnPTree/skimmed_Feb_19_2018_Data/TnPTreeJPsi_17Nov2017_Charmonium_Run2017Ev1_Full_GoldenJSON_skimmed.root',
-#           '/eos/user/s/sfonseca/Jpsi2017TnPTree/skimmed_Feb_19_2018_Data/TnPTreeJPsi_17Nov2017_Charmonium_Run2017Fv1_Full_GoldenJSON_skimmed.root'
+#'/eos/user/e/eliza/TnP/inputfiles/DATA/Reco2018/TnPTreeJPsi_17Sep2018_Charmonium_Run2018Av1_GoldenJSON_skimtree_12022019.root', 
+#'/eos/user/e/eliza/TnP/inputfiles/DATA/Reco2018/TnPTreeJPsi_17Sep2018_Charmonium_Run2018Bv1_GoldenJSON_skimtree_12022019.root',
+#'/eos/user/e/eliza/TnP/inputfiles/DATA/Reco2018/TnPTreeJPsi_17Sep2018_Charmonium_Run2018Cv1_GoldenJSON_skimtree_12022019.root', 
+#'/eos/user/e/eliza/TnP/inputfiles/DATA/TnPTreeJPsi_Charmonium_Run2018Dv2_GoldenJSON_321222_to_323523_skimTree_30Oct2018.root',
+#'/eos/user/e/eliza/TnP/inputfiles/DATA/TnPTreeJPsi_Charmonium_Run2018Dv2_GoldenJSON_323524_to_End_skimTree_17Dec2018.root',
+#'/eos/user/e/eliza/TnP/inputfiles/DATA/TnPTreeJPsi_Charmonium_Run2018Dv2_GoldenJSON_Upto321221_skimTree_19Oct2018.root'
+
             ),                                                                                                                           
         InputTreeName = cms.string("fitter_tree"),                                                                                       
         InputDirectoryName = cms.string("tpTree"),                                                                                       
@@ -555,146 +515,15 @@ if sample == "data_all":
         )  
 
 #####
-if sample == "data_RunB":
-    process.TnP_MuonID = Template.clone(
-       InputFileNames = cms.vstring(
-           #IMPORTANT: Only use this dataset for test. Need to skim to produce the final efficiency studies
-            '/eos/user/e/eliza/TnP/inputfiles/DATA/2018/TnPTreeJPsi_Charmonium_Run2018Dv2_GoldenJSON_Upto321221.root'
-          # '/eos/user/s/sfonseca/Jpsi2017TnPTree/skimmed_Jan_02_2018_Data/TnPTreeJPsi_Charmonium_Run2017Bv1_294927_to_302343_GoldenJSON_skimmed.root',
-          # '/eos/user/s/sfonseca/Jpsi2017TnPTree/skimmed_Jan_02_2018_Data/TnPTreeJPsi_Charmonium_Run2017Bv2_294927_to_302343_GoldenJSON_skimmed.root'
-#           '/eos/user/s/sfonseca/Jpsi2017TnPTree/skimmed_Jan_02_2018_Data/TnPTreeJPsi_Charmonium_Run2017Cv1_294927_to_302343_GoldenJSON_skimmed.root',
-#           '/eos/user/s/sfonseca/Jpsi2017TnPTree/skimmed_Jan_02_2018_Data/TnPTreeJPsi_Charmonium_Run2017Cv2_294927_to_302343_GoldenJSON_skimmed.root',
-#           '/eos/user/s/sfonseca/Jpsi2017TnPTree/skimmed_Jan_02_2018_Data/TnPTreeJPsi_Charmonium_Run2017Cv3_294927_to_302343_GoldenJSON_skimmed.root',
-#           '/eos/user/s/sfonseca/Jpsi2017TnPTree/skimmed_Jan_02_2018_Data/TnPTreeJPsi_Charmonium_Run2017Dv1_302031_to_302663_GoldenJSON_skimmed.root',
-#           '/eos/user/s/sfonseca/Jpsi2017TnPTree/skimmed_Jan_02_2018_Data/TnPTreeJPsi_Charmonium_Run2017Ev1_303572_to_303825_GoldenJSON_skimmed.root',
-#           '/eos/user/s/sfonseca/Jpsi2017TnPTree/skimmed_Jan_02_2018_Data/TnPTreeJPsi_Charmonium_Run2017Ev1_303826_to_304120_GoldenJSON_skimmed.root'
-            ),
-        InputTreeName = cms.string("fitter_tree"),
-        InputDirectoryName = cms.string("tpTree"),
-        OutputFileName = cms.string("TnP_MuonISO_%s.root" % scenario),
-        Efficiencies = cms.PSet(),
-        )
-
-if sample == "data_RunC":
-    process.TnP_MuonID = Template.clone(
-       InputFileNames = cms.vstring(
-           #IMPORTANT: Only use this dataset for test. Need to skim to produce the final efficiency studies
-#           '/eos/user/s/sfonseca/Jpsi2017TnPTree/skimmed_Jan_02_2018_Data/TnPTreeJPsi_Charmonium_Run2017Bv1_294927_to_302343_GoldenJSON_skimmed.root',
-#           '/eos/user/s/sfonseca/Jpsi2017TnPTree/skimmed_Jan_02_2018_Data/TnPTreeJPsi_Charmonium_Run2017Bv2_294927_to_302343_GoldenJSON_skimmed.root',
-           '/eos/user/s/sfonseca/Jpsi2017TnPTree/skimmed_Jan_02_2018_Data/TnPTreeJPsi_Charmonium_Run2017Cv1_294927_to_302343_GoldenJSON_skimmed.root',
-           '/eos/user/s/sfonseca/Jpsi2017TnPTree/skimmed_Jan_02_2018_Data/TnPTreeJPsi_Charmonium_Run2017Cv2_294927_to_302343_GoldenJSON_skimmed.root',
-           '/eos/user/s/sfonseca/Jpsi2017TnPTree/skimmed_Jan_02_2018_Data/TnPTreeJPsi_Charmonium_Run2017Cv3_294927_to_302343_GoldenJSON_skimmed.root'
-#           '/eos/user/s/sfonseca/Jpsi2017TnPTree/skimmed_Jan_02_2018_Data/TnPTreeJPsi_Charmonium_Run2017Dv1_302031_to_302663_GoldenJSON_skimmed.root',
-#           '/eos/user/s/sfonseca/Jpsi2017TnPTree/skimmed_Jan_02_2018_Data/TnPTreeJPsi_Charmonium_Run2017Ev1_303572_to_303825_GoldenJSON_skimmed.root',
-#           '/eos/user/s/sfonseca/Jpsi2017TnPTree/skimmed_Jan_02_2018_Data/TnPTreeJPsi_Charmonium_Run2017Ev1_303826_to_304120_GoldenJSON_skimmed.root'
-            ),
-        InputTreeName = cms.string("fitter_tree"),
-        InputDirectoryName = cms.string("tpTree"),
-        OutputFileName = cms.string("TnP_MuonISO_%s.root" % scenario),
-        Efficiencies = cms.PSet(),
-        )
-
-
-
-
-if sample == "data_RunD":
-    process.TnP_MuonID = Template.clone(
-       InputFileNames = cms.vstring(
-           #IMPORTANT: Only use this dataset for test. Need to skim to produce the final efficiency studies
-#           '/eos/user/s/sfonseca/Jpsi2017TnPTree/skimmed_Jan_02_2018_Data/TnPTreeJPsi_Charmonium_Run2017Bv1_294927_to_302343_GoldenJSON_skimmed.root',
-#           '/eos/user/s/sfonseca/Jpsi2017TnPTree/skimmed_Jan_02_2018_Data/TnPTreeJPsi_Charmonium_Run2017Bv2_294927_to_302343_GoldenJSON_skimmed.root',
-#           '/eos/user/s/sfonseca/Jpsi2017TnPTree/skimmed_Jan_02_2018_Data/TnPTreeJPsi_Charmonium_Run2017Cv1_294927_to_302343_GoldenJSON_skimmed.root',
-#           '/eos/user/s/sfonseca/Jpsi2017TnPTree/skimmed_Jan_02_2018_Data/TnPTreeJPsi_Charmonium_Run2017Cv2_294927_to_302343_GoldenJSON_skimmed.root',
-#           '/eos/user/s/sfonseca/Jpsi2017TnPTree/skimmed_Jan_02_2018_Data/TnPTreeJPsi_Charmonium_Run2017Cv3_294927_to_302343_GoldenJSON_skimmed.root',
-           #'/eos/user/s/sfonseca/Jpsi2017TnPTree/skimmed_Jan_02_2018_Data/TnPTreeJPsi_Charmonium_Run2017Dv1_302031_to_302663_GoldenJSON_skimmed.root'
-#           '/eos/user/s/sfonseca/Jpsi2017TnPTree/skimmed_Jan_02_2018_Data/TnPTreeJPsi_Charmonium_Run2017Ev1_303572_to_303825_GoldenJSON_skimmed.root',
-#           '/eos/user/s/sfonseca/Jpsi2017TnPTree/skimmed_Jan_02_2018_Data/TnPTreeJPsi_Charmonium_Run2017Ev1_303826_to_304120_GoldenJSON_skimmed.root'
-#'/eos/user/e/eliza/TnP/inputfiles/DATA/2018/TnPTreeJPsi_Charmonium_Run2018Dv2_GoldenJSON_Upto321221.root'
-#'file:TnPTreeJPsi_Charmonium_Run2018Dv2_GoldenJSON_Upto321221_skimTestLooseID.root'
-            '/eos/user/e/eliza/TnP/inputfiles/MC/TnPTreeJPsi_102X_JpsiToMuMu_JpsiPt8_Pythia8_VtxWeight_Run2018AD_skimmed.root'    
-            ),
-        InputTreeName = cms.string("fitter_tree"),
-        InputDirectoryName = cms.string("tpTree"),
-        OutputFileName = cms.string("TnP_MuonISO_%s.root" % scenario),
-        Efficiencies = cms.PSet(),
-        )
-
-
-if sample == "data_RunE":
-    process.TnP_MuonID = Template.clone(
-       InputFileNames = cms.vstring(
-           #IMPORTANT: Only use this dataset for test. Need to skim to produce the final efficiency studies
-#           '/eos/user/s/sfonseca/Jpsi2017TnPTree/skimmed_Jan_02_2018_Data/TnPTreeJPsi_Charmonium_Run2017Bv1_294927_to_302343_GoldenJSON_skimmed.root',
-#           '/eos/user/s/sfonseca/Jpsi2017TnPTree/skimmed_Jan_02_2018_Data/TnPTreeJPsi_Charmonium_Run2017Bv2_294927_to_302343_GoldenJSON_skimmed.root',
-#           '/eos/user/s/sfonseca/Jpsi2017TnPTree/skimmed_Jan_02_2018_Data/TnPTreeJPsi_Charmonium_Run2017Cv1_294927_to_302343_GoldenJSON_skimmed.root',
-#           '/eos/user/s/sfonseca/Jpsi2017TnPTree/skimmed_Jan_02_2018_Data/TnPTreeJPsi_Charmonium_Run2017Cv2_294927_to_302343_GoldenJSON_skimmed.root',
-#           '/eos/user/s/sfonseca/Jpsi2017TnPTree/skimmed_Jan_02_2018_Data/TnPTreeJPsi_Charmonium_Run2017Cv3_294927_to_302343_GoldenJSON_skimmed.root',
-#           '/eos/user/s/sfonseca/Jpsi2017TnPTree/skimmed_Jan_02_2018_Data/TnPTreeJPsi_Charmonium_Run2017Dv1_302031_to_302663_GoldenJSON_skimmed.root',
-           '/eos/user/s/sfonseca/Jpsi2017TnPTree/skimmed_Jan_02_2018_Data/TnPTreeJPsi_Charmonium_Run2017Ev1_303572_to_303825_GoldenJSON_skimmed.root',
-           '/eos/user/s/sfonseca/Jpsi2017TnPTree/skimmed_Jan_02_2018_Data/TnPTreeJPsi_Charmonium_Run2017Ev1_303826_to_304120_GoldenJSON_skimmed.root',
-           '/eos/user/s/sfonseca/Jpsi2017TnPTree/skimmed_Jan_02_2018_Data/TnPTreeJPsi_Charmonium_Run2017Ev1_304121_to_304507_GoldenJSON_skimmed.root',
-           '/eos/user/s/sfonseca/Jpsi2017TnPTree/skimmed_Jan_02_2018_Data/TnPTreeJPsi_Charmonium_Run2017Ev1_304508_to_305185_GoldenJSON_skimmed.root'
-            ),
-        InputTreeName = cms.string("fitter_tree"),
-        InputDirectoryName = cms.string("tpTree"),
-        OutputFileName = cms.string("TnP_MuonISO_%s.root" % scenario),
-        Efficiencies = cms.PSet(),
-        )
-
-
-
-
-
-if sample == "data_RunF":
-    process.TnP_MuonID = Template.clone(
-       InputFileNames = cms.vstring(
-           #IMPORTANT: Only use this dataset for test. Need to skim to produce the final efficiency studies
-#           '/eos/user/s/sfonseca/Jpsi2017TnPTree/skimmed_Jan_02_2018_Data/TnPTreeJPsi_Charmonium_Run2017Bv1_294927_to_302343_GoldenJSON_skimmed.root',
-#           '/eos/user/s/sfonseca/Jpsi2017TnPTree/skimmed_Jan_02_2018_Data/TnPTreeJPsi_Charmonium_Run2017Bv2_294927_to_302343_GoldenJSON_skimmed.root',
-#           '/eos/user/s/sfonseca/Jpsi2017TnPTree/skimmed_Jan_02_2018_Data/TnPTreeJPsi_Charmonium_Run2017Cv1_294927_to_302343_GoldenJSON_skimmed.root',
-#           '/eos/user/s/sfonseca/Jpsi2017TnPTree/skimmed_Jan_02_2018_Data/TnPTreeJPsi_Charmonium_Run2017Cv2_294927_to_302343_GoldenJSON_skimmed.root',
-#           '/eos/user/s/sfonseca/Jpsi2017TnPTree/skimmed_Jan_02_2018_Data/TnPTreeJPsi_Charmonium_Run2017Cv3_294927_to_302343_GoldenJSON_skimmed.root',
-#           '/eos/user/s/sfonseca/Jpsi2017TnPTree/skimmed_Jan_02_2018_Data/TnPTreeJPsi_Charmonium_Run2017Dv1_302031_to_302663_GoldenJSON_skimmed.root',
-#           '/eos/user/s/sfonseca/Jpsi2017TnPTree/skimmed_Jan_02_2018_Data/TnPTreeJPsi_Charmonium_Run2017Ev1_303572_to_303825_GoldenJSON_skimmed.root',
-#           '/eos/user/s/sfonseca/Jpsi2017TnPTree/skimmed_Jan_02_2018_Data/TnPTreeJPsi_Charmonium_Run2017Ev1_303826_to_304120_GoldenJSON_skimmed.root',
-#           '/eos/user/s/sfonseca/Jpsi2017TnPTree/skimmed_Jan_02_2018_Data/TnPTreeJPsi_Charmonium_Run2017Ev1_304121_to_304507_GoldenJSON_skimmed.root',
-#           '/eos/user/s/sfonseca/Jpsi2017TnPTree/skimmed_Jan_02_2018_Data/TnPTreeJPsi_Charmonium_Run2017Ev1_304508_to_305185_GoldenJSON_skimmed.root'
-           '/eos/user/s/sfonseca/Jpsi2017TnPTree/skimmed_Jan_02_2018_Data/TnPTreeJPsi_Charmonium_Run2017Fv1_304508_to_305185_GoldenJSON_skimmed.root',
-           '/eos/user/s/sfonseca/Jpsi2017TnPTree/skimmed_Jan_02_2018_Data/TnPTreeJPsi_Charmonium_Run2017Fv1_305186_to_305364_GoldenJSON_skimmed.root',
-           '/eos/user/s/sfonseca/Jpsi2017TnPTree/skimmed_Jan_02_2018_Data/TnPTreeJPsi_Charmonium_Run2017Fv1_305365_to_305636_GoldenJSON_skimmed.root',
-           '/eos/user/s/sfonseca/Jpsi2017TnPTree/skimmed_Jan_02_2018_Data/TnPTreeJPsi_Charmonium_Run2017Fv1_305637_to_306126_GoldenJSON_skimmed.root',
-           '/eos/user/s/sfonseca/Jpsi2017TnPTree/skimmed_Jan_02_2018_Data/TnPTreeJPsi_Charmonium_Run2017Fv1_306127_to_306462_GoldenJSON_skimmed.root'
-            ),
-        InputTreeName = cms.string("fitter_tree"),
-        InputDirectoryName = cms.string("tpTree"),
-        OutputFileName = cms.string("TnP_MuonISO_%s.root" % scenario),
-        Efficiencies = cms.PSet(),
-        )
 
 
 if sample == "mc_all":                                                                                                                  
     process.TnP_MuonID = Template.clone(                                                                                                 
        InputFileNames = cms.vstring(                            
-           #IMPORTANT: Only use this dataset for test. Need to skim and reweight in NVertices to produce the final efficiency studies
-            #'/eos/user/s/sfonseca/Jpsi2017TnPTree/MC_vtxWeight_Run2017B_E/tnpJPsi_MC_JpsiPt8_TuneCUEP8M1_13TeV_pythia8_VtxWeight_Run2017BCDE_skimmed.root'
-        #    '/eos/user/s/sfonseca/Jpsi2017TnPTree/MC_vtxWeight_Run2017B_E/tnpJPsi_MC_JpsiPt8_TuneCUEP8M1_13TeV_pythia8_VtxWeight_Run2017BCDEF_skimmed.root'
-        #    '/eos/user/s/sfonseca/Jpsi2017TnPTree/MC_vtxWeight_Run2017C_F_Feb_2018/tnpJPsi_MC_JpsiPt8_TuneCUEP8M1_13TeV_pythia8_VtxWeight_Run2017CDEF_Fev2018_skimmed.root' 
-#            '/eos/user/s/sfonseca/Jpsi2017TnPTree/MC_vtxWeight_Run2017B_E_March2018/tnpJPsi_MC_JpsiPt8_TuneCUEP8M1_13TeV_pythia8_VtxWeight_Run2017BCDEF_March2018_skimmed.root'
-          #'/eos/user/e/eliza/TnP/inputfiles/MC/TnPTreeJPsi_102X_JpsiToMuMu_JpsiPt8_Pythia8_VtxWeight_Run2018ABCD_skimmed_v2.root'
-#"file:TnPTreeJPsi_102X_JpsiToMuMu_JpsiPt8_Pythia8_VtxWeight_Run2018D_skimmed_RunD_test.root"  
-# '/eos/user/e/eliza/TnP/inputfiles/MC/TnPTreeJPsi_102X_JpsiToMuMu_JpsiPt8_Pythia8_VtxWeight_Run2018AD_skimmed.root'
-#'/eos/user/e/eliza/TnP/inputfiles/MC/TnPTreeJPsi_102X_JpsiToMuMu_JpsiPt8_Pythia8_VtxWeight_Run2018AD_skimmed_30Oct2018.root'
-##2016-BtoH
-#'/eos/user/e/eliza/TnP/inputfiles/MC/2016Legacy/16Nov2018/TnPTreeJPsi_80X_JpsiToMuMu_JpsiPt8_Pythia8_skimTree_addNVtxWeight_16Nov2018_v2.root'
-#'/eos/user/e/eliza/TnP/inputfiles/MC/2016Legacy/16Nov2018/TnPTreeJPsi_LegacyRereco07Aug17_Charmonium_skimTree_addNVtxWeight_Run2016BtoH_04Dec2018.root'
-#'/eos/user/e/eliza/TnP/inputfiles/MC/2016Legacy/16Nov2018/TnPTreeJPsi_80X_JpsiToMuMu_JpsiPt8_Pythia8_GoldenJSON_skimTree_addNVtxWeight_16Nov2018.root'
-##2016-BtoF
-#'/eos/user/e/eliza/TnP/inputfiles/MC/2016Legacy/16Nov2018/TnPTreeJPsi_LegacyRereco07Aug17_Charmonium_skimTree_addNVtxWeight_Run2016BtoF_04Dec2018.root'
-##2016GtoH
-#'/eos/user/e/eliza/TnP/inputfiles/MC/2016Legacy/16Nov2018/TnPTreeJPsi_LegacyRereco07Aug17_Charmonium_skimTree_addNVtxWeight_Run2016GtoH_04Dec2018.root'
+
 '/eos/user/e/eliza/TnP/inputfiles/MC/2018/TnPTreeJPsi_102XAutumn18_JpsiToMuMu_JpsiPt8_Pythia8_VtxWeight_Run2018AD_skimmed_17Dec2018.root'
 
-         # 'TnPTreeJPsi_102X_JpsiToMuMu_JpsiPt8_Pythia8_VtxWeight_Run2018D_skimmed.root'
+      
 
             ),                                                                                                                           
         InputTreeName = cms.string("fitter_tree"),                                                                                       
@@ -703,100 +532,7 @@ if sample == "mc_all":
         Efficiencies = cms.PSet(),                                                                                                       
         )  
 
-if sample == "mc_RunB":
-    process.TnP_MuonID = Template.clone(
-       InputFileNames = cms.vstring(
-            '/eos/user/s/sfonseca/Jpsi2017TnPTree/MC_vtxWeight_Run2017B_E/tnpJPsi_MC_JpsiPt8_TuneCUEP8M1_13TeV_pythia8_VtxWeight_Run2017B_skimmed.root'
-            ),
-        InputTreeName = cms.string("fitter_tree"),
-        InputDirectoryName = cms.string("tpTree"),
-        OutputFileName = cms.string("TnP_MuonISO_%s.root" % scenario),
-        Efficiencies = cms.PSet(),
-        )
 
-if sample == "mc_RunC":
-    process.TnP_MuonID = Template.clone(
-       InputFileNames = cms.vstring(
-           #IMPORTANT: Only use this dataset for test. Need to skim and reweight in NVertices to produce the final efficiency studies
-            '/eos/user/s/sfonseca/Jpsi2017TnPTree/MC_vtxWeight_Run2017B_E/tnpJPsi_MC_JpsiPt8_TuneCUEP8M1_13TeV_pythia8_VtxWeight_Run2017C_skimmed.root'
-	    ),
-        InputTreeName = cms.string("fitter_tree"),
-        InputDirectoryName = cms.string("tpTree"),
-        OutputFileName = cms.string("TnP_MuonISO_%s.root" % scenario),
-        Efficiencies = cms.PSet(),
-        )
-
-
-if sample == "mc_RunD":
-    process.TnP_MuonID = Template.clone(
-       InputFileNames = cms.vstring(
-           #IMPORTANT: Only use this dataset for test. Need to skim and reweight in NVertices to produce the final efficiency studies
-            '/eos/user/s/sfonseca/Jpsi2017TnPTree/MC_vtxWeight_Run2017B_E/tnpJPsi_MC_JpsiPt8_TuneCUEP8M1_13TeV_pythia8_VtxWeight_Run2017D_skimmed.root'
-            ),
-        InputTreeName = cms.string("fitter_tree"),
-        InputDirectoryName = cms.string("tpTree"),
-        OutputFileName = cms.string("TnP_MuonISO_%s.root" % scenario),
-        Efficiencies = cms.PSet(),
-        )
-
-
-if sample == "mc_RunE":
-    process.TnP_MuonID = Template.clone(
-       InputFileNames = cms.vstring(
-           #IMPORTANT: Only use this dataset for test. Need to skim and reweight in NVertices to produce the final efficiency studies
-          #  '/eos/user/s/sfonseca/Jpsi2017TnPTree/MC_vtxWeight_Run2017B_E/tnpJPsi_MC_JpsiPt8_TuneCUEP8M1_13TeV_pythia8_VtxWeight_Run2017E_skimmed.root'
-            '/eos/user/s/sfonseca/Jpsi2017TnPTree/MC_vtxWeight_Run2017B_E/tnpJPsi_MC_JpsiPt8_TuneCUEP8M1_13TeV_pythia8_VtxWeight_Run2017E_303572_to_305185_skimmed.root' 
-            ),
-        InputTreeName = cms.string("fitter_tree"),
-        InputDirectoryName = cms.string("tpTree"),
-        OutputFileName = cms.string("TnP_MuonISO_%s.root" % scenario),
-        Efficiencies = cms.PSet(),
-        )
-
-
-
-if sample == "mc_RunF":
-    process.TnP_MuonID = Template.clone(
-       InputFileNames = cms.vstring(
-           #IMPORTANT: Only use this dataset for test. Need to skim and reweight in NVertices to produce the final efficiency studies
-          #  '/eos/user/s/sfonseca/Jpsi2017TnPTree/MC_vtxWeight_Run2017B_E/tnpJPsi_MC_JpsiPt8_TuneCUEP8M1_13TeV_pythia8_VtxWeight_Run2017E_skimmed.root'
-            '/eos/user/s/sfonseca/Jpsi2017TnPTree/MC_vtxWeight_Run2017B_E/tnpJPsi_MC_JpsiPt8_TuneCUEP8M1_13TeV_pythia8_VtxWeight_Run2017F_304508_to_306126_skimmed.root'
-            ),
-        InputTreeName = cms.string("fitter_tree"),
-        InputDirectoryName = cms.string("tpTree"),
-        OutputFileName = cms.string("TnP_MuonISO_%s.root" % scenario),
-        Efficiencies = cms.PSet(),
-        )
-
-
-
-
-
-#if sample == "dataiso":                                                                                                                  
-#    process.TnP_MuonID = Template.clone(                                                                                                 
-#       InputFileNames = cms.vstring(                            
-#            '/eos/cms/store/group/phys_muon/fernanpe/eff170724_not20/TnPTree_SingleMuon_Run2017Bv1_294927_to_299042_GoldenJSON_skimmedISO.root',
-#            '/eos/cms/store/group/phys_muon/fernanpe/eff170724_not20/TnPTree_SingleMuon_Run2017Bv2_294927_to_299042_GoldenJSON_skimmedISO.root',
-#            '/eos/cms/store/group/phys_muon/fernanpe/eff2017C/TnPTree_SingleMuon_Run2017C_PromptReco-v1_skimmedISO.root',
-#            '/eos/cms/store/group/phys_muon/fernanpe/eff2017C/TnPTree_SingleMuon_Run2017C_PromptReco-v2_skimmedISO.root'
-#            ),                                                                                                                           
-#        InputTreeName = cms.string("fitter_tree"),                                                                                       
-#        InputDirectoryName = cms.string("tpTree"),                                                                                       
-#        OutputFileName = cms.string("TnP_MuonISO_%s.root" % scenario),                                                                   
-#        Efficiencies = cms.PSet(),                                                                                                       
-#        )  
-#
-#
-#if sample == "mciso":                                                                                                                  
-#    process.TnP_MuonID = Template.clone(                                                                                                 
-#       InputFileNames = cms.vstring(                            
-#            '/eos/cms/store/group/phys_muon/fernanpe/eff2017C/TnPTree_PhaseISpring17_DYMadgraph_M50toInf_skimmedISO_weighted.root'
-#            ),                                                                                                                           
-#        InputTreeName = cms.string("fitter_tree"),                                                                                       
-#        InputDirectoryName = cms.string("tpTree"),                                                                                       
-#        OutputFileName = cms.string("TnP_MuonISO_%s.root" % scenario),                                                                   
-#        Efficiencies = cms.PSet(),                                                                                                       
-#        )  
 
 
 #if scenario == "mc_all":
